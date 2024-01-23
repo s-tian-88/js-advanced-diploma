@@ -11,8 +11,4 @@ module.exports = merge(common, {
       new CSSMinimizerPlugin({})
     ],
   },
-  devServer: {
-    port: 3000,
-    open: true
-  }
 })

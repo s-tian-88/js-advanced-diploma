@@ -19,23 +19,6 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        // dependecy: { not: ["url"] },
-        type: "asset/resource",
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-            }
-          }
-        ],
-      },
-      {
-        test: /\.html$/,
-        use: "html-loader"
-      }
-    ]
+    ],
   }
 };
