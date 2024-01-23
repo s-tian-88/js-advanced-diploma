@@ -6,13 +6,4 @@ export default function theme(lvl) {
     'mountain',
   ];
   return Themes[lvl - 1];
-};
-
-// const themes = {
-//   prairie: 'prairie',
-//   desert: 'desert',
-//   arctic: 'arctic',
-//   mountain: 'mountain',
-// };
-//
-// export default themes;
+}
