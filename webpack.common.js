@@ -8,17 +8,8 @@ module.exports = {
     filename: "[name].[contenthash].js",
     clean: true
   },
-  plugins: [
-    new HtmlWebpackCplugin({
-      template: path.resolve(__dirname, "src", "index.html")
-    }),
-  ],
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -26,6 +17,15 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
-  }
+  },
+  plugins: [
+    new HtmlWebpackCplugin({
+      template: path.resolve(__dirname, "src", "index.html")
+    }),
+  ],
 };
