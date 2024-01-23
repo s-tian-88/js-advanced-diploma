@@ -1,12 +1,18 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
-const TersetPlugin = require('terset-webpack-plugin');
-const CSSMinimizePlugin = require('css-mimnimize-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = merge(common, {
-  mode = 'production',
-  optimization: [
-    new TersetPlugin({}),
-    new HtmlWebpackCplugin({})
-  ]
+  mode: 'production',
+  optimization: {
+    minimizer: [
+      new TerserPlugin({}),
+      new CSSMinimizerPlugin({})
+    ],
+  },
+  devServer: {
+    port: 3000,
+    open: true
+  }
 })
